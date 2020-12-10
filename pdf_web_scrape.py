@@ -2,7 +2,7 @@ from selenium import webdriver
 import pdfplumber as pdp
 import difflib
 import os
-
+import time
 """
 These all need to be made into functions so I can 
 clean this code up. Because eventually what I will 
@@ -12,8 +12,16 @@ pdfs into txt files so I can compare to see if they
 are the same.
 """
 
-chrome_path = "/home/hank/Downloads/chrome_driver/chromedriver"
+# Linux path
+# chrome_path = "/home/hank/Downloads/chrome_driver/chromedriver"
+
+#Windows path
+chrome_path = r"C:\Program Files (x86)\chromedriver.exe"
+
 options = (webdriver.ChromeOptions())
+
+# Should add the preferences from the default profile.
+options.add_argument("user-data-dir=C:\\Users\\Hank\\AppData\\Local\\Google\\Chrome\\User Data")
 
 options.add_argument("--no-sandbox")
 
@@ -33,15 +41,23 @@ options.add_argument(
 driver = webdriver.Chrome(chrome_path,options=options)
 
 
-url = "https://gdchillers.com/product-documentation/"
-
-def scrape(url):
+def scrape():
+    url = "https://gdchillers.com/product-documentation/"
     driver.get(url)
-scrape()
+# scrape()
 
-path = "/home/hank/Downloads/GD-1.5H-spec-dwg-revE.pdf"
-path2 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/a.txt"
-path3 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/b.txt"
+def single_stage():
+    url = "https://gdchillers.com/product-documentation/"
+    driver.get(url)
+    driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div/div[1]/div/div/div/ul/li[1]/a').click()
+    time.sleep(1)
+    #driver.find_element_by_xpath('id="icon"]/iron-icon').click()
+
+single_stage()
+# Linux paths
+# path = "/home/hank/Downloads/GD-1.5H-spec-dwg-revE.pdf"
+# path2 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/a.txt"
+# path3 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/b.txt"
 
 
 def open_pdf():

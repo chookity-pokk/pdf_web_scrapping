@@ -47,98 +47,60 @@ def scrape():
 # scrape()
 
 def single_stage():
-    What if i make a for loop here and just have i be in the end. That will definitely cut down on the code.
     url = "https://gdchillers.com/product-documentation/"
     driver.get(url)
-    driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div/div[1]/div/div/div/ul/li[1]/a').click()
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[2]').click()
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[3]').click()
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[4]').click()
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[5]').click()
-    time.sleep(1)
-    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[6]').click()
-    time.sleep(1)
+    for i in range(1,7):
+        driver.find_element_by_xpath(f'//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[{i}]').click()
+        time.sleep(1)
     
-#single_stage()
+single_stage()
 
 def multi_stage():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,6):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
 
 def vas():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,8):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
+
+
     
 def low_temp():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,10):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
 
     
 def tandem():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,10):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
+
     
 def modular():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,5):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
+
     
 def exp_mod():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,9):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
+
 
 def fire_n_ice():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,10):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
+
 
 def heaters():
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
-    driver.find_element_by_xpath().click()
+    for i in range(1,8):
+        driver.find_element_by_xpath().click()
+        time.sleep(1)
     
     
 # Linux paths

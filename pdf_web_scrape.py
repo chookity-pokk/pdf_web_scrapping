@@ -51,8 +51,17 @@ def single_stage():
     driver.get(url)
     driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div/div[1]/div/div/div/ul/li[1]/a').click()
     time.sleep(1)
-    #driver.find_element_by_xpath('id="icon"]/iron-icon').click()
-
+    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[2]').click()
+    time.sleep(1)
+    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[3]').click()
+    time.sleep(1)
+    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[4]').click()
+    time.sleep(1)
+    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[5]').click()
+    time.sleep(1)
+    driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[6]').click()
+    time.sleep(1)
+    
 single_stage()
 # Linux paths
 # path = "/home/hank/Downloads/GD-1.5H-spec-dwg-revE.pdf"

@@ -47,6 +47,7 @@ def scrape():
 # scrape()
 
 def single_stage():
+    What if i make a for loop here and just have i be in the end. That will definitely cut down on the code.
     url = "https://gdchillers.com/product-documentation/"
     driver.get(url)
     driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div/div[1]/div/div/div/ul/li[1]/a').click()
@@ -62,7 +63,84 @@ def single_stage():
     driver.find_element_by_xpath('//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[6]').click()
     time.sleep(1)
     
-single_stage()
+#single_stage()
+
+def multi_stage():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+
+def vas():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    
+def low_temp():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+
+    
+def tandem():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    
+def modular():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    
+def exp_mod():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+
+def fire_n_ice():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+
+def heaters():
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    driver.find_element_by_xpath().click()
+    
+    
 # Linux paths
 # path = "/home/hank/Downloads/GD-1.5H-spec-dwg-revE.pdf"
 # path2 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/a.txt"

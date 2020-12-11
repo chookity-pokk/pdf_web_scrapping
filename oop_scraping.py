@@ -125,6 +125,11 @@ class pdf_comparing:
 
     @property
     def open_pdf(self):
+        """
+        This will turn all the pdfs (local and from the website)
+        into text files.
+        """
+        # This will open up the downloaded pdfs and turn them into txt files
         save_path = r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\pdfs"
         lists = os.walk(save_path)
         for path, dir, filenames in lists:
@@ -132,17 +137,34 @@ class pdf_comparing:
                 doc = os.path.join(path, filename)
                 with pdp.open(doc) as pdf:
                     first_page = pdf.pages[0]
-                    print(first_page.extract_text(), file=open("output.txt", "a", encoding="utf-8"))
+                    print(first_page.extract_text(), file=open("website_output.txt", "a", encoding="utf-8"))
                 # Might want to make this go beforehand so it'll break up the sections
-                with open("output.txt", 'a', encoding="utf-8") as text:
+                with open("website_output.txt", 'a', encoding="utf-8") as text:
                     text.write(f"{filename}\n")
-                print(f"{filename} finished.")
-                # if filename.endswith('.xlsx'):
-                # doc = os.path.join(path, filename)
-                # print(doc)
+                print(f"{filename} converted from pdf to txt.")
 
+        # This opens up the local pdfs and converts them into txt files.
+        pathy = r"C:\Users\Hank\Documents\Testom\PDFS"
+        listed = os.walk(pathy)
+        for path, fir, filenames in listed:
+            for filename in filenames:
+                doc = os.path.join(path, filename)
+                with pdp.open(doc) as pdf:
+                    first_page = pdf.pages[0]
+                    print(first_page.extract_text(), file=open("local_output.txt", "a", encoding="utf-8"))
+                with open("local_output", 'a', encoding='utf-8') as text:
+                    text.write(f"{filename} finished\n")
+                print(f"{filename} converted from pdf to txt.")
+
+
+        
     @property
     def compare():
+        """
+        This compares the two text files generated from 
+        the open_pdf function and tell us if there are any differences
+        and if so, what they are.
+        """
         # this also needs to be fixed.
         with open(path3) as f1:
             f1_text = f1.read()
@@ -164,7 +186,8 @@ class pdf_comparing:
             print("These files are the same")
 
 
-pc = pdf_comparing()
+#pc = pdf_comparing()
 # pc.collection # This downloads all the pdf's from the website
 # pc.open_pdf # This takes the pdf's and converts them to text
 # pc.compare # This will compare the sets of pdf's
+print(help(pdf_comparing))

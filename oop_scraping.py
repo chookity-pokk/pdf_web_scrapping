@@ -4,6 +4,11 @@ import difflib
 import os
 import time
 
+"""
+So I think I need to also have another function
+to run through to pdf's that we have and convert
+those into txt files then compare them.
+"""
 
 class pdf_comparing:
     # Linux path
@@ -161,4 +166,5 @@ class pdf_comparing:
 
 pc = pdf_comparing()
 # pc.collection # This downloads all the pdf's from the website
-pc.open_pdf
+# pc.open_pdf # This takes the pdf's and converts them to text
+# pc.compare # This will compare the sets of pdf's

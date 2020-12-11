@@ -5,12 +5,23 @@ import os
 import time
 
 """
-So I think I need to also have another function
-to run through to pdf's that we have and convert
-those into txt files then compare them.
+I might want to look into giving this a 
+CLI because that might be a bit easier 
+for future use.
 """
 
+
 class pdf_comparing:
+    """
+    This class will grab PDF's from the G&D Chillers website
+    then convert those pdfs into txt files then take the local
+    pdfs we have and convert them into txt files. From there it
+    will compare the two text files and report if anything is different.
+    This is to check and make sure that the pdfs online are
+    the most up to date ones without having to manually go through
+    all of the pdfs.
+    """
+
     # Linux path
     # chrome_path = "/home/hank/Downloads/chrome_driver/chromedriver"
 
@@ -24,12 +35,14 @@ class pdf_comparing:
         "user-data-dir=C:\\Users\\Hank\\AppData\\Local\\Google\\Chrome\\User Data"
     )
 
-    prefs = {"download.default_directory": r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\pdfs"}
-    
+    prefs = {
+        "download.default_directory": r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\pdfs"
+    }
+
     options.add_argument("--no-sandbox")
 
     options.add_experimental_option("prefs", prefs)
-    
+
     options.add_argument(
         "--log-level=3"
     )  # This should get rid of a depreciation error.
@@ -130,16 +143,21 @@ class pdf_comparing:
         into text files.
         """
         # This will open up the downloaded pdfs and turn them into txt files
-        save_path = r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\pdfs"
+        save_path = (
+            r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\pdfs"
+        )
         lists = os.walk(save_path)
         for path, dir, filenames in lists:
             for filename in filenames:
                 doc = os.path.join(path, filename)
                 with pdp.open(doc) as pdf:
                     first_page = pdf.pages[0]
-                    print(first_page.extract_text(), file=open("website_output.txt", "a", encoding="utf-8"))
+                    print(
+                        first_page.extract_text(),
+                        file=open("website_output.txt", "a", encoding="utf-8"),
+                    )
                 # Might want to make this go beforehand so it'll break up the sections
-                with open("website_output.txt", 'a', encoding="utf-8") as text:
+                with open("website_output.txt", "a", encoding="utf-8") as text:
                     text.write(f"{filename}\n")
                 print(f"{filename} converted from pdf to txt.")
 
@@ -151,17 +169,18 @@ class pdf_comparing:
                 doc = os.path.join(path, filename)
                 with pdp.open(doc) as pdf:
                     first_page = pdf.pages[0]
-                    print(first_page.extract_text(), file=open("local_output.txt", "a", encoding="utf-8"))
-                with open("local_output", 'a', encoding='utf-8') as text:
+                    print(
+                        first_page.extract_text(),
+                        file=open("local_output.txt", "a", encoding="utf-8"),
+                    )
+                with open("local_output", "a", encoding="utf-8") as text:
                     text.write(f"{filename} finished\n")
                 print(f"{filename} converted from pdf to txt.")
 
-
-        
     @property
     def compare():
         """
-        This compares the two text files generated from 
+        This compares the two text files generated from
         the open_pdf function and tell us if there are any differences
         and if so, what they are.
         """
@@ -186,8 +205,8 @@ class pdf_comparing:
             print("These files are the same")
 
 
-#pc = pdf_comparing()
+# pc = pdf_comparing()
 # pc.collection # This downloads all the pdf's from the website
 # pc.open_pdf # This takes the pdf's and converts them to text
 # pc.compare # This will compare the sets of pdf's
-print(help(pdf_comparing))
+# print(help(pdf_comparing))

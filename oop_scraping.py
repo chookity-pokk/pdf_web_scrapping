@@ -158,8 +158,8 @@ class pdf_comparing:
                     )
                 # Might want to make this go beforehand so it'll break up the sections
                 with open("website_output.txt", "a", encoding="utf-8") as text:
-                    text.write(f"{filename}\n")
-                print(f"{filename} converted from pdf to txt.")
+                    text.write(f"{filename}\n\n\n")
+                print(f"{filename} converted from pdf to txt(website file).")
 
         # This opens up the local pdfs and converts them into txt files.
         pathy = r"C:\Users\Hank\Documents\Testom\PDFS"
@@ -174,21 +174,28 @@ class pdf_comparing:
                         file=open("local_output.txt", "a", encoding="utf-8"),
                     )
                 with open("local_output", "a", encoding="utf-8") as text:
-                    text.write(f"{filename} finished\n")
-                print(f"{filename} converted from pdf to txt.")
+                    text.write(f"{filename}\n\n\n")
+                print(f"{filename} converted from pdf to txt(local file).")
 
     @property
-    def compare():
+    def compare(self):
         """
         This compares the two text files generated from
         the open_pdf function and tell us if there are any differences
         and if so, what they are.
         """
         # this also needs to be fixed.
-        with open(path3) as f1:
+        # These paths need to be changed to open up
+        # the txt files.
+        save_path = (
+            r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\local_output.txt"
+        )
+        
+        with open(save_path, encoding="utf-8") as f1:
             f1_text = f1.read()
 
-        with open(path2) as f2:
+        pathy = r"C:\Users\Hank\Documents\Random Python Scripts\pdf\pdf_web_scrapping\website_output.txt"
+        with open(pathy, encoding="utf-8") as f2:
             f2_text = f2.read()
 
         # Edit this fromfile and tofile to be more accurate. Should be a.txt and b.txt
@@ -205,8 +212,8 @@ class pdf_comparing:
             print("These files are the same")
 
 
-# pc = pdf_comparing()
+pc = pdf_comparing()
 # pc.collection # This downloads all the pdf's from the website
 # pc.open_pdf # This takes the pdf's and converts them to text
-# pc.compare # This will compare the sets of pdf's
+pc.compare # This will compare the sets of pdf's
 # print(help(pdf_comparing))

@@ -4,17 +4,10 @@ import difflib
 import os
 import time
 """
-These all need to be made into functions so I can 
-clean this code up. Because eventually what I will 
-want to do is web scrape with selenium then convert
-those pdf's into txt files and convert the local
-pdfs into txt files so I can compare to see if they
-are the same.
-"""
-
-"""
 This might be a good place to use a class
-and make an oop script.
+and make an oop script. 
+
+WIP @ oop_scraping.py
 """
 # Linux path
 # chrome_path = "/home/hank/Downloads/chrome_driver/chromedriver"
@@ -142,3 +135,13 @@ def compare():
             print("These files have differences")
     except:
         print("These files are the same")
+
+
+#This still needs to be fixed.
+def dir_walk():
+    lists = os.walk(save_path)
+    for path, dir, filenames in lists:
+        for filename in filenames:
+            if filename.endswith('.xlsx'):
+                doc = os.path.join(path, filename)
+                print(doc)

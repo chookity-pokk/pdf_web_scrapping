@@ -12,6 +12,10 @@ pdfs into txt files so I can compare to see if they
 are the same.
 """
 
+"""
+This might be a good place to use a class
+and make an oop script.
+"""
 # Linux path
 # chrome_path = "/home/hank/Downloads/chrome_driver/chromedriver"
 
@@ -57,50 +61,52 @@ single_stage()
 
 def multi_stage():
     for i in range(1,6):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[2]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
+multi_stage()    
 
 def vas():
     for i in range(1,8):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[3]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
-
-
+vas()        
     
 def low_temp():
     for i in range(1,10):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[4]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
+low_temp()
 
-    
 def tandem():
     for i in range(1,10):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[5]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
-
-    
+tandem()
+        
 def modular():
     for i in range(1,5):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[6]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
-
-    
+modular()
+        
 def exp_mod():
     for i in range(1,9):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[7]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
-
-
+exp_mod()
+        
 def fire_n_ice():
     for i in range(1,10):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[8]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
-
-
+fire_n_ice()
+        
 def heaters():
     for i in range(1,8):
-        driver.find_element_by_xpath().click()
+        driver.find_element_by_xpath(f'/html/body/div[1]/div/div/main/div/div/div[9]/div/div/div/ul/li[{i}]').click()
         time.sleep(1)
+    driver.close()
+heaters()        
     
     
 # Linux paths
@@ -108,6 +114,8 @@ def heaters():
 # path2 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/a.txt"
 # path3 = "/home/hank/Development/pdf_parse/pdf_web_scrapping/b.txt"
 
+# Use .split() to split the words so I am not getting
+# the difference in words and not letters.
 
 def open_pdf():
     with pdp.open(path) as pdf:

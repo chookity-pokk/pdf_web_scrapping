@@ -47,70 +47,71 @@ class pdf_comparing:
         """
         # single_stage
         for i in range(1, 7):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f'//*[@id="content"]/div/div/main/div/div/div[1]/div/div/div/ul/li[{i}]'
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # multi_stage
         for i in range(1, 6):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[2]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # vertical air
         for i in range(1, 8):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[3]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # low temp
         for i in range(1, 10):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[4]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # tandem
         for i in range(1, 10):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[5]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # modular
         for i in range(1, 5):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[6]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # expansion module
         for i in range(1, 9):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[7]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # fire and ice
         for i in range(1, 10):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[8]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
 
         # heaters
         for i in range(1, 8):
-            driver.find_element_by_xpath(
+            self.driver.find_element_by_xpath(
                 f"/html/body/div[1]/div/div/main/div/div/div[9]/div/div/div/ul/li[{i}]"
             ).click()
-            time.sleep(1)
+            time.sleep(.5)
+            
         # Gives a few extra seconds to help the download finish.
         time.sleep(5)
         # this will close the browser
-        driver.close()
+        self.driver.close()
 
     @property
     def open_pdf(self):
@@ -148,3 +149,4 @@ class pdf_comparing:
             print("These files are the same")
 
 pc = pdf_comparing()
+pc.collection
